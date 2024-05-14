@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = 8080;
+const port = 8181;
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
@@ -29,7 +29,8 @@ app.post('/send-email', (req, res) => {
         from: 'verdie.prosacco9@ethereal.email',
         to: email,
         subject: 'Appointment Verification',
-        text: `Dear ${firstName} ${lastName},\n\nYour appointment has been scheduled for ${start}-${end} at ${place}.\n\nPlease click on the following link to verify your appointment: http://your-verification-url\n\nRegards,\nYour App Team`
+        text: `Dear ${firstName} ${lastName},\n\nYour appointment has been scheduled for ${start}-${end} at ${place}.
+        \n\nPlease click on the following link to verify your appointment: http://your-verification-url\n\nRegards,\nYour App Team`
     };
 
     // Send the email
