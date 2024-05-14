@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  hms-smtp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: smtp-container
+    restart: always
+      # Add any environment variables your application needs
+    # Add any additional configurations specific to this service
+
+  # Add more services as needed
