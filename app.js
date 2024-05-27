@@ -16,21 +16,19 @@ app.post('/send-email', (req, res) => {
     console.log(firstName +" "+ lastName +" "+ email +" "+ place +" "+ start +" "+ end);
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
+        service: 'gmail',
         auth: {
-            user: 'verdie.prosacco9@ethereal.email',
-            pass: 'dNGyJ2uEN63JgWtPAD'
+            user: 'keadrengene@gmail.com',
+            pass: 'ddhx xfgj sual tjmj'  // Use the App Password generated above
         }
     });
 
     // Email content
     const mailOptions = {
-        from: 'verdie.prosacco9@ethereal.email',
+        from: 'keadrengene@gmail.com',
         to: email,
         subject: 'Appointment Verification',
-        text: `Dear ${firstName} ${lastName},\n\nYour appointment has been scheduled for ${start}-${end} at ${place}.
-        \n\nPlease click on the following link to verify your appointment: http://your-verification-url\n\nRegards,\nYour App Team`
+        text: `Dear ${firstName} ${lastName},\n\nYour appointment has been scheduled for ${start}-${end} at ${place}.`
     };
 
     // Send the email

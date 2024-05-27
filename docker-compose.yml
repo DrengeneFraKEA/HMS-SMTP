@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "8181:8181"
     container_name: smtp-container
     restart: always
       # Add any environment variables your application needs
